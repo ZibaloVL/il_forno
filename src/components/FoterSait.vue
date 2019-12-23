@@ -2,7 +2,7 @@
   <v-footer dark padless>
     <v-card class="flex" flat tile>
       <v-card-title class="teal">
-        <strong class="subheading">Get connected with us on social networks!</strong>
+        <strong class="subheading">Ждём Вас на наших страницах</strong>
 
         <v-spacer></v-spacer>
 
@@ -13,7 +13,7 @@
 
       <v-card-text class="py-2 white--text text-center">
         {{ new Date().getFullYear() }} —
-        <strong>Vuetify</strong>
+        <strong>IL FORNO</strong>
       </v-card-text>
     </v-card>
   </v-footer>
@@ -24,13 +24,7 @@ export default {
   name: "FoterSait",
 
   data: () => ({
-    icons: [
-      "fab fa-facebook",
-      "fab fa-twitter",
-      "fab fa-google-plus",
-      "fab fa-linkedin",
-      "fab fa-instagram"
-    ]
+    icons: ["fab fa-facebook", "fab fa-instagram", "fab fa-tripadvisor"]
   })
 };
 </script>

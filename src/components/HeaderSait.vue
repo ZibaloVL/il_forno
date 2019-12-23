@@ -5,18 +5,22 @@
         alt="Vuetify Logo"
         class="shrink mr-2"
         contain
-        src="../assets/logo/logoFB.jpg"
+        :src="require('../assets/logo/IL_FORNO_logo1.svg')"
         transition="scale-transition"
-        width="40"
+        width="100"
       />
     </div>
 
     <v-spacer></v-spacer>
 
-    <v-btn href="https://github.com/vuetifyjs/vuetify/releases/latest" target="_blank" text>
-      <span class="mr-2">Latest Release</span>
-      <v-icon>mdi-open-in-new</v-icon>
-    </v-btn>
+    <v-btn
+      class="meniu"
+      v-for="(itemMeniu, index) in meniu"
+      :key="index"
+      href="https://github.com/vuetifyjs/vuetify/releases/latest"
+      target="_blank"
+      text
+    >{{itemMeniu.text}}</v-btn>
   </v-app-bar>
 </template>
 
@@ -24,6 +28,27 @@
 export default {
   name: "HeaderSait",
 
-  data: () => ({})
+  data: () => ({
+    meniu: [
+      {
+        text: "Меню",
+        src: ""
+      },
+      {
+        text: "Контакты",
+        src: ""
+      },
+      {
+        text: "Как найти",
+        src: ""
+      }
+    ]
+  })
 };
 </script>
+
+<style  scoped>
+.meniu {
+  color: #7a2716;
+}
+</style>

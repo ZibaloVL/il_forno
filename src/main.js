@@ -4,8 +4,16 @@ import router from './router'
 import store from './store'
 import './registerServiceWorker'
 import vuetify from './plugins/vuetify';
+// import 'vue-material-design-icons/styles.css';
+// import MenuIcon from 'vue-material-design-icons/Menu.vue';
+
+// доделать раздел меню подсоеденив svg
+// раздел контактов
+// форма обратной связи
+
 
 Vue.config.productionTip = false
+// Vue.component('menu-icon', MenuIcon);
 
 new Vue({
   router,
@@ -13,3 +21,4 @@ new Vue({
   vuetify,
   render: h => h(App)
 }).$mount('#app')
+
