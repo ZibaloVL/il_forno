@@ -3,6 +3,7 @@
     <header-sait></header-sait>
     <v-content class="appP">
       <home-page></home-page>
+      <p class="fontss">Loreren</p>
       <meniu-food></meniu-food>
     </v-content>
     <foter-sait></foter-sait>
@@ -32,4 +33,18 @@ export default {
 </script>
 
 <style >
+@font-face {
+  font-family: "BariolRegular";
+  src: url("./assets/fonts/Bario/BariolRegular.eot");
+  src: url("./assets/fonts/Bario/BariolRegular.woff") format("woff"),
+    url("./assets/fonts/Bario/BariolRegular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+.appP {
+}
+.fontss {
+  font-family: "BariolRegular";
+}
 </style>
