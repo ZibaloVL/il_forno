@@ -1,31 +1,27 @@
 <template>
-  <v-card color="basil">
-    <v-card-title class="text-center justify-center py-6">
-      <h2 class="font-weight-bold display-3 basil--text">Меню</h2>
-    </v-card-title>
-
-    <v-tabs v-model="tab" background-color="transparent" color="basil" grow>
-      <v-tab v-for="item in items" :key="item">{{ item }}</v-tab>
-    </v-tabs>
-
-    <v-tabs-items v-model="tab">
-      <v-tab-item v-for="item in items" :key="item">
-        <v-card flat color="basil">
-          <v-img
-            class="my-3"
-            contain
-            height="1000"
-            v-for="(imgPath, i) in imgMenu(item)"
-            :key="i"
-            :src="require(`@/assets/menu/${imgPath}`)"
-          ></v-img>
-          <!--
-          <v-img :src="require('../assets/menu/breakfast.svg')" class="my-3" contain height="1000"></v-img>
-          -->
-        </v-card>
-      </v-tab-item>
-    </v-tabs-items>
-  </v-card>
+  <div>
+    <v-card color="basil">
+      <v-card-title class="text-center justify-center py-6">
+        <h2 class="font-weight-bold display-3 basil--text">Меню</h2>
+      </v-card-title>
+      <v-tabs v-model="tab" background-color="transparent" color="basil" grow>
+        <v-tab v-for="item in items" :key="item">{{ item }}</v-tab>
+      </v-tabs>
+      <v-tabs-items v-model="tab">
+        <v-tab-item v-for="item in items" :key="item">
+          <v-container>
+            <v-row justify="center" wrap>
+              <v-col v-for="(imgPath, i) in imgMenu(item)" :key="i" md="6" xs="12" cols="12">
+                <v-card flat color="basil">
+                  <v-img contain :src="require(`@/assets/menu/${imgPath}`)"></v-img>
+                </v-card>
+              </v-col>
+            </v-row>
+          </v-container>
+        </v-tab-item>
+      </v-tabs-items>
+    </v-card>
+  </div>
 </template>
 
 <script>
