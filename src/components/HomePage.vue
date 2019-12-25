@@ -3,7 +3,10 @@
     <v-parallax dark :height="imgHeight" src="../assets/bg/20191206-IMG_1144_1080.jpg">
       <v-row align="center" justify="center">
         <v-col class="text-center" cols="12">
+          <!--
           <h1 class="h1 font-italic font-weight-bold display-4 mb-4 py-10">НЕАПОЛИТАНСКИЕ РЕЦЕПТЫ</h1>
+          -->
+        <v-img :src="require('../assets/bg/text/Neapolitan.svg')"></v-img>  
         </v-col>
       </v-row>
     </v-parallax>
