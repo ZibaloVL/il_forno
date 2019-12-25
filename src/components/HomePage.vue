@@ -1,41 +1,19 @@
 <template>
   <div>
-    <v-parallax dark :height="imgHeight" src="../assets/bg/20191206-IMG_1144_1080.jpg">
-      <v-row align="center" justify="center">
-        <v-col class="text-center" cols="12">
-          <!--
-          <h1 class="h1 font-italic font-weight-bold display-4 mb-4 py-10">НЕАПОЛИТАНСКИЕ РЕЦЕПТЫ</h1>
-          -->
-        <v-img :src="require('../assets/bg/text/Neapolitan.svg')"></v-img>  
-        </v-col>
-      </v-row>
-    </v-parallax>
-  
-    <v-parallax dark :height="imgHeight" src="../assets/bg/20191206-IMG_1195_1080.jpg">
-      <v-row align="center" justify="center">
-        <v-col class="text-center" cols="12">
-          <h1 class="h1 mb-4 py-10">ЛУЧШИЕ ПРОДУКТЫ</h1>
-        </v-col>
-      </v-row>
-    </v-parallax>
-    <v-parallax dark :height="imgHeight" src="../assets/bg/20191219-IMG_2540_1080.jpg">
-      <v-row align="center" justify="center">
-        <v-col class="text-center" cols="12">
-          <h1 class="h1 mb-4 py-10">ИЗЫСКАНОЕ МЕНЮ</h1>
-        </v-col>
-      </v-row>
-    </v-parallax>
-    <v-parallax dark :height="imgHeight" src="../assets/bg/20191219-IMG_2571-Edit_1080.jpg">
-      <v-row align="center" justify="center">
-        <v-col class="text-center" cols="12">
-          <h1 class="h1 mb-4 py-10">НЕЗАБЫВАЕМЫЕ ДЕСЕРТЫ</h1>
-        </v-col>
-      </v-row>
-    </v-parallax>
-    <v-parallax dark :height="imgHeight" src="../assets/bg/20191218-IMG_2381_1080.jpg">
-      <v-row align="center" justify="center">
-        <v-col class="text-center" cols="12">
-          <h1 class="h1 mb-4 py-10">ВОЛШЕБНЫЕ НАПИТКИ</h1>
+    <v-parallax
+      v-for="(paralaxItem, index) in paralaxItems"
+      :key="index"
+      dark
+      class="mb-4"
+      :height="imgHeight"
+      :src="require(`@/assets/bg/${paralaxItem.img}`)"
+    >
+      <v-row align="end" justify="end" class="mb-10">
+        <v-col lg="10" class="text-center" cols="12">
+          <v-img
+            width="100%"
+            :src="require(`@/assets/bg/text/${languege}/${paralaxItem.inscription}`)"
+          ></v-img>
         </v-col>
       </v-row>
     </v-parallax>
@@ -47,7 +25,30 @@ export default {
   name: "HomePage",
 
   data: () => ({
-    imgHeight : 1299
+    languege: "ro",
+    imgHeight: 900,
+    paralaxItems: [
+      {
+        img: "20191206-IMG_1144_1080.jpg",
+        inscription: "Neapolitan.png"
+      },
+      {
+        img: "20191206-IMG_1195_1080.jpg",
+        inscription: "ProduseDeTop.png"
+      },
+      {
+        img: "20191219-IMG_2540_1080.jpg",
+        inscription: "MeniuGastronomic.png"
+      },
+      {
+        img: "20191219-IMG_2571-Edit_1080.jpg",
+        inscription: "DeserturiDeNeuitat.png"
+      },
+      {
+        img: "20191218-IMG_2381_1080.jpg",
+        inscription: "BăuturiMagice.png"
+      }
+    ]
   })
 };
 </script>
