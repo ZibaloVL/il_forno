@@ -3,7 +3,6 @@
     <header-sait></header-sait>
     <v-content class="appP">
       <home-page></home-page>
-      <p class="fontss">Loreren</p>
       <meniu-food></meniu-food>
     </v-content>
     <foter-sait></foter-sait>
@@ -43,8 +42,6 @@ export default {
 }
 
 .appP {
-}
-.fontss {
-  font-family: "BariolRegular";
+  background-color: white;
 }
 </style>

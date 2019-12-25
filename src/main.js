@@ -4,6 +4,8 @@ import router from './router'
 import store from './store'
 import './registerServiceWorker'
 import vuetify from './plugins/vuetify';
+const path = require('path');
+
 // import 'vue-material-design-icons/styles.css';
 // import MenuIcon from 'vue-material-design-icons/Menu.vue';
 
@@ -21,4 +23,5 @@ new Vue({
   vuetify,
   render: h => h(App)
 }).$mount('#app')
-
+console.log('sssssss')
+console.log(path.join(__dirname, '_'))

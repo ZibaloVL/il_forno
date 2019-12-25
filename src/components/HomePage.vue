@@ -32,7 +32,7 @@
     <v-parallax dark height="1080" src="../assets/bg/20191218-IMG_2381.jpg">
       <v-row align="center" justify="center">
         <v-col class="text-center" cols="12">
-          <p class="h1 mb-4 py-10">ВОЛШЕБНЫЕ НАПИТКИ</p>
+          <h1 class="h1 mb-4 py-10">ВОЛШЕБНЫЕ НАПИТКИ</h1>
         </v-col>
       </v-row>
     </v-parallax>
@@ -55,9 +55,5 @@ export default {
     url("../assets/fonts/Bario/BariolRegular.ttf") format("truetype");
   font-style: normal;
   font-weight: normal;
-}
-.h1 {
-  font-size: 4rem !important;
-  font-family: "BariolRegular" !important;
 }
 </style>

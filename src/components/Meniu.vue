@@ -1,7 +1,7 @@
 <template>
   <v-card color="basil">
     <v-card-title class="text-center justify-center py-6">
-      <h1 class="font-weight-bold display-3 basil--text">BASiL</h1>
+      <h2 class="font-weight-bold display-3 basil--text">Меню</h2>
     </v-card-title>
 
     <v-tabs v-model="tab" background-color="transparent" color="basil" grow>
@@ -11,8 +11,17 @@
     <v-tabs-items v-model="tab">
       <v-tab-item v-for="item in items" :key="item">
         <v-card flat color="basil">
-          <v-card-text>{{ text }}</v-card-text>
+          <v-img
+            class="my-3"
+            contain
+            height="1000"
+            v-for="(imgPath, i) in imgMenu(item)"
+            :key="i"
+            :src="require(`@/assets/menu/${imgPath}`)"
+          ></v-img>
+          <!--
           <v-img :src="require('../assets/menu/breakfast.svg')" class="my-3" contain height="1000"></v-img>
+          -->
         </v-card>
       </v-tab-item>
     </v-tabs-items>
@@ -22,13 +31,43 @@
 <script>
 export default {
   name: "HeaderSait",
+  created() {
+    this.items = ["ЗАВТРАК", "МЕНЮ", "ВИННАЯ КАРТА"];
+  },
   data() {
     return {
       tab: null,
-      items: [" Breakfast", "Menu"],
-      text:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+      items: [],
+      menuPages: [
+        {
+          name: "ЗАВТРАК",
+          imgPaths: ["breakfast.svg", "breakfast1.svg"]
+        },
+        {
+          name: "МЕНЮ",
+          imgPaths: ["menu0.svg", "menu1.svg", "menu2.svg"]
+        },
+        {
+          name: "ВИННАЯ КАРТА",
+          imgPaths: ["wine_card.svg"]
+        }
+      ]
     };
+  },
+  methods: {
+    imgMenu(item) {
+      console.log("item=", item);
+      let imgPaths = [];
+      this.menuPages.forEach(element => {
+        if (element.name === item) {
+          element.imgPaths.forEach(path => imgPaths.push(path.toString()));
+        }
+      });
+
+      // console.log("imgPaths[0].toString()");
+      // console.log(path.join(__dirname, imgPaths[0].toString()));
+      return imgPaths;
+    }
   }
 };
 </script>
