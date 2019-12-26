@@ -20,7 +20,7 @@
       href="https://github.com/vuetifyjs/vuetify/releases/latest"
       target="_blank"
       text
-    >{{itemMeniu.text}}</v-btn>
+    >{{itemMeniu.text[language]}}</v-btn>
   </v-app-bar>
 </template>
 
@@ -29,17 +29,30 @@ export default {
   name: "HeaderSait",
 
   data: () => ({
+    language: "ro",
     meniu: [
       {
-        text: "Меню",
+        text: {
+          ro: "Meniu",
+          en: "Menu",
+          ru: "Меню"
+        },
         src: ""
       },
       {
-        text: "Контакты",
+        text: {
+          ro: "Contacte",
+          en: "Contacts",
+          ru: "Контакты"
+        },
         src: ""
       },
       {
-        text: "Как найти",
+        text: {
+          ro: "cum să găsești",
+          en: "how to find",
+          ru: "Как найти"
+        },
         src: ""
       }
     ]

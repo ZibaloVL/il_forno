@@ -2,7 +2,7 @@
   <div>
     <v-card color="basil">
       <v-card-title class="text-center justify-center py-6">
-        <h2 class="font-weight-bold display-3 basil--text">Меню</h2>
+        <h2 class="font-weight-bold display-3 basil--text">{{titulName[languege]}}</h2>
       </v-card-title>
       <v-tabs v-model="tab" background-color="transparent" color="basil" grow>
         <v-tab v-for="item in items" :key="item">{{ item }}</v-tab>
@@ -13,7 +13,7 @@
             <v-row justify="center" wrap>
               <v-col v-for="(imgPath, i) in imgMenu(item)" :key="i" md="6" xs="12" cols="12">
                 <v-card flat color="basil">
-                  <v-img contain :src="require(`@/assets/menu/${imgPath}`)"></v-img>
+                  <v-img contain :src="require(`@/assets/menu/${languege}/${imgPath}`)"></v-img>
                 </v-card>
               </v-col>
             </v-row>
@@ -27,24 +27,46 @@
 <script>
 export default {
   name: "HeaderSait",
+
   created() {
-    this.items = ["ЗАВТРАК", "МЕНЮ", "ВИННАЯ КАРТА"];
+    this.menuPages.forEach(element => {
+      this.items.push(element.name[this.languege]);
+    });
   },
+
   data() {
     return {
       tab: null,
+      languege: "ro",
       items: [],
+      titulName: {
+        ro: "MENIU",
+        en: "MENU",
+        ru: "МЕНЮ"
+      },
       menuPages: [
         {
-          name: "ЗАВТРАК",
+          name: {
+            ro: "MIC DEJUN",
+            en: "BREAKFAST",
+            ru: "ЗАВТРАК"
+          },
           imgPaths: ["breakfast.svg", "breakfast1.svg"]
         },
         {
-          name: "МЕНЮ",
+          name: {
+            ro: "MENIU PRINCIPAL",
+            en: "BASIC MENU",
+            ru: "ОСНОВНОЕ МЕНЮ"
+          },
           imgPaths: ["menu0.svg", "menu1.svg", "menu2.svg"]
         },
         {
-          name: "ВИННАЯ КАРТА",
+          name: {
+            ro: "HARTA VINULUI",
+            en: "WINE MAP",
+            ru: "ВИННАЯ КАРТА"
+          },
           imgPaths: ["wine_card.svg"]
         }
       ]
@@ -55,13 +77,10 @@ export default {
       console.log("item=", item);
       let imgPaths = [];
       this.menuPages.forEach(element => {
-        if (element.name === item) {
+        if (element.name[this.languege] === item) {
           element.imgPaths.forEach(path => imgPaths.push(path.toString()));
         }
       });
-
-      // console.log("imgPaths[0].toString()");
-      // console.log(path.join(__dirname, imgPaths[0].toString()));
       return imgPaths;
     }
   }

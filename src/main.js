@@ -6,10 +6,6 @@ import './registerServiceWorker'
 import vuetify from './plugins/vuetify';
 const path = require('path');
 
-// import 'vue-material-design-icons/styles.css';
-// import MenuIcon from 'vue-material-design-icons/Menu.vue';
-
-// доделать раздел меню подсоеденив svg
 // раздел контактов
 // форма обратной связи
 
