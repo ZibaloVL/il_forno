@@ -14,6 +14,7 @@ import HomePage from "./components/HomePage";
 import HeaderSait from "./components/HeaderSait";
 import FoterSait from "./components/FoterSait";
 import MeniuFood from "./components/Meniu";
+import ContactPath from "./components/ContactPath";
 
 export default {
   name: "App",
@@ -22,7 +23,8 @@ export default {
     HomePage,
     HeaderSait,
     FoterSait,
-    MeniuFood
+    MeniuFood,
+    ContactPath
   },
 
   data: () => ({
