@@ -1,26 +1,45 @@
 <template>
-  <v-app-bar app hide-on-scroll color="#ffffff">
-    <div class="d-flex align-center">
-      <v-img
-        alt="Vuetify Logo"
-        class="shrink mr-2"
-        contain
-        :src="require('../assets/logo/IL_FORNO_logo1.svg')"
-        transition="scale-transition"
-        width="100"
-      />
-    </div>
+  <div>
+    <v-navigation-drawer absolute tempotary v-model="drawer" class="hidden-md-and-up noPrint">
+      <v-list>
+        <v-list-item-group>
+          <v-list-item v-for="(item, i ) in  menuHeader" :key="i">
+            <v-list-item-action>
+              <v-btn
+                class="meniu"
+                text
+                @click="$vuetify.goTo(item.src, {duration:1000, offset: 0, easing: 'linear'})"
+              >{{item.text[language]}}</v-btn>
+            </v-list-item-action>
+          </v-list-item>
+        </v-list-item-group>
+      </v-list>
+      <v-app-bar-nav-icon color="black" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+    </v-navigation-drawer>
 
-    <v-spacer></v-spacer>
+    <v-app-bar app hide-on-scroll color="#ffffff">
+      <div class="d-flex align-center">
+        <v-img
+          alt="Vuetify Logo"
+          class="shrink mr-2"
+          contain
+          :src="require('../assets/logo/IL_FORNO_logo1.svg')"
+          transition="scale-transition"
+          width="100"
+        />
+      </div>
 
-    <v-btn
-      class="meniu"
-      v-for="(itemMenu, index) in menuHeader"
-      :key="index"
-      text
-      @click="$vuetify.goTo(itemMenu.src, {duration:1000, offset: 0, easing: 'linear'})"
-    >{{itemMenu.text[language]}}</v-btn>
-  </v-app-bar>
+      <v-spacer></v-spacer>
+
+      <v-btn
+        class="meniu"
+        v-for="(itemMenu, index) in menuHeader"
+        :key="index"
+        text
+        @click="$vuetify.goTo(itemMenu.src, {duration:1000, offset: 0, easing: 'linear'})"
+      >{{itemMenu.text[language]}}</v-btn>
+    </v-app-bar>
+  </div>
 </template>
 
 <script>
@@ -28,6 +47,7 @@ export default {
   name: "HeaderSait",
 
   data: () => ({
+    drawer: true,
     language: "ro",
     menuHeader: [
       {
