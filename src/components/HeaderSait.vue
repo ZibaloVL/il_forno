@@ -15,12 +15,11 @@
 
     <v-btn
       class="meniu"
-      v-for="(itemMeniu, index) in meniu"
+      v-for="(itemMenu, index) in menuHeader"
       :key="index"
-      href="https://github.com/vuetifyjs/vuetify/releases/latest"
-      target="_blank"
       text
-    >{{itemMeniu.text[language]}}</v-btn>
+      @click="$vuetify.goTo(itemMenu.src, {duration:7000, offset: 0, easing: 'linear'})"
+    >{{itemMenu.text[language]}}</v-btn>
   </v-app-bar>
 </template>
 
@@ -30,14 +29,14 @@ export default {
 
   data: () => ({
     language: "ro",
-    meniu: [
+    menuHeader: [
       {
         text: {
           ro: "Meniu",
           en: "Menu",
           ru: "Меню"
         },
-        src: ""
+        src: "#menu"
       },
       {
         text: {
@@ -45,7 +44,7 @@ export default {
           en: "Contacts",
           ru: "Контакты"
         },
-        src: ""
+        src: "#contact"
       },
       {
         text: {
@@ -53,7 +52,7 @@ export default {
           en: "how to find",
           ru: "Как найти"
         },
-        src: ""
+        src: "#map"
       }
     ]
   })

@@ -10,7 +10,7 @@
       <v-tabs-items v-model="tab">
         <v-tab-item v-for="item in items" :key="item">
           <v-container>
-            <v-row justify="center" wrap>
+            <v-row id="menu" justify="center" wrap>
               <v-col v-for="(imgPath, i) in imgMenu(item)" :key="i" md="6" xs="12" cols="12">
                 <v-card flat color="basil">
                   <v-img contain :src="require(`@/assets/menu/${languege}/${imgPath}`)"></v-img>
