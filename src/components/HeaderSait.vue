@@ -14,11 +14,11 @@
           </v-list-item>
         </v-list-item-group>
       </v-list>
-      <v-app-bar-nav-icon color="black" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
     </v-navigation-drawer>
 
     <v-app-bar app hide-on-scroll color="#ffffff">
-      <div class="d-flex align-center">
+      <v-app-bar-nav-icon class="hidden-md-and-up" @click.stop="drawer = !drawer" color="brown"></v-app-bar-nav-icon>
+      <v-toolbar-title>
         <v-img
           alt="Vuetify Logo"
           class="shrink mr-2"
@@ -27,17 +27,19 @@
           transition="scale-transition"
           width="100"
         />
-      </div>
+      </v-toolbar-title>
 
       <v-spacer></v-spacer>
-
-      <v-btn
-        class="meniu"
-        v-for="(itemMenu, index) in menuHeader"
-        :key="index"
-        text
-        @click="$vuetify.goTo(itemMenu.src, {duration:1000, offset: 0, easing: 'linear'})"
-      >{{itemMenu.text[language]}}</v-btn>
+      <v-toolbar-items class="hidden-md-and-down">
+        <v-btn
+          color="brown"
+          class="meniu"
+          v-for="(itemMenu, index) in menuHeader"
+          :key="index"
+          text
+          @click="$vuetify.goTo(itemMenu.src, {duration:1000, offset: 0, easing: 'linear'})"
+        >{{itemMenu.text[language]}}</v-btn>
+      </v-toolbar-items>
     </v-app-bar>
   </div>
 </template>
@@ -47,7 +49,7 @@ export default {
   name: "HeaderSait",
 
   data: () => ({
-    drawer: true,
+    drawer: false,
     language: "ro",
     menuHeader: [
       {
