@@ -18,7 +18,7 @@
       v-for="(itemMenu, index) in menuHeader"
       :key="index"
       text
-      @click="$vuetify.goTo(itemMenu.src, {duration:7000, offset: 0, easing: 'linear'})"
+      @click="$vuetify.goTo(itemMenu.src, {duration:1000, offset: 0, easing: 'linear'})"
     >{{itemMenu.text[language]}}</v-btn>
   </v-app-bar>
 </template>
