@@ -1,6 +1,7 @@
 <template>
   <div>
-    <v-navigation-drawer absolute temporary v-model="drawer" class="hidden-md-and-up noPrint">
+    <div class="hidden-md-and-up noPrint">
+      <v-navigation-drawer height="200" absolute temporary v-model="drawer" >
       <v-list>
         <v-list-item-group>
           <v-list-item v-for="(item, i ) in  menuHeader" :key="i">
@@ -11,9 +12,24 @@
         </v-list-item-group>
       </v-list>
     </v-navigation-drawer>
-
-    <v-app-bar app hide-on-scroll color="#ffffff">
-      <v-app-bar-nav-icon class="hidden-md-and-up" @click.stop="drawer = !drawer" color="brown"></v-app-bar-nav-icon>
+    <v-app-bar app>
+      
+      <v-toolbar-title>
+        <v-img
+          alt="Vuetify Logo"
+          class="shrink mr-2"
+          contain
+          :src="require('../assets/logo/IL_FORNO_logo1.svg')"
+          transition="scale-transition"
+          width="100"
+        />  
+      </v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-app-bar-nav-icon  @click.stop="drawer = !drawer" color="brown"></v-app-bar-nav-icon>
+      
+    </v-app-bar>
+    </div>
+    <v-app-bar  class="hidden-sm-and-down" app hide-on-scroll color="#ffffff">
       <v-toolbar-title>
         <v-img
           alt="Vuetify Logo"
@@ -24,9 +40,8 @@
           width="100"
         />
       </v-toolbar-title>
-
       <v-spacer></v-spacer>
-      <v-toolbar-items class="hidden-md-and-down">
+      <v-toolbar-items >
         <v-btn
           color="brown"
           class="meniu"
