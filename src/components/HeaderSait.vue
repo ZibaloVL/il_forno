@@ -1,15 +1,11 @@
 <template>
   <div>
-    <v-navigation-drawer absolute tempotary v-model="drawer" class="hidden-md-and-up noPrint">
+    <v-navigation-drawer absolute temporary v-model="drawer" class="hidden-md-and-up noPrint">
       <v-list>
         <v-list-item-group>
           <v-list-item v-for="(item, i ) in  menuHeader" :key="i">
             <v-list-item-action>
-              <v-btn
-                class="meniu"
-                text
-                @click="$vuetify.goTo(item.src, {duration:1000, offset: 0, easing: 'linear'})"
-              >{{item.text[language]}}</v-btn>
+              <v-btn class="meniu" text @click="tenpotaryClic(item)">{{item.text[language]}}</v-btn>
             </v-list-item-action>
           </v-list-item>
         </v-list-item-group>
@@ -77,7 +73,17 @@ export default {
         src: "#map"
       }
     ]
-  })
+  }),
+  methods: {
+    tenpotaryClic(item) {
+      this.drawer = !this.drawer;
+      this.$vuetify.goTo(item.src, {
+        duration: 1000,
+        offset: 0,
+        easing: "linear"
+      });
+    }
+  }
 };
 </script>
 
