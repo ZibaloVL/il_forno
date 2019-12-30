@@ -1,28 +1,5 @@
 <template>
   <div>
-    <!--
-    <v-parallax
-      v-for="(paralaxItem, index) in paralaxItems"
-      :key="index"
-      dark
-      class="mb-4"
-      :height="imgHeight"
-      :src="require(`@/assets/bg/horizontal/${paralaxItem.img.horizontal}`)"
-    >
-      <v-row align="end" justify="end" class="mb-10">
-        <v-col lg="10" class="text-center" cols="12">
-          <v-img
-            width="100%"
-            :src="require(`@/assets/bg/text/${languege}/${paralaxItem.inscription}`)"
-          ></v-img>
-        </v-col>
-      </v-row>
-    </v-parallax>
-    <hr />
-    <hr />
-    <hr />
-    <hr />
-    -->
     <v-carousel hide-delimiters cycle show-arrows-on-hover height="900">
       <v-carousel-item v-for="(paralaxItem, index) in paralaxItems" :key="index">
         <v-parallax

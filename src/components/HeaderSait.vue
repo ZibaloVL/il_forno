@@ -29,7 +29,7 @@
       
     </v-app-bar>
     </div>
-    <v-app-bar  class="hidden-sm-and-down" app hide-on-scroll color="#ffffff">
+    <v-app-bar  class="hidden-sm-and-down"  absolute hide-on-scroll color="#ffffff">
       <v-toolbar-title>
         <v-img
           alt="Vuetify Logo"
