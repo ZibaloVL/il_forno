@@ -22,16 +22,15 @@
       </v-carousel>
     </div>
     
-    <v-carousel hide-delimiters cycle show-arrows-on-hover height="815" class="hidden-sm-and-up">
+    <v-carousel hide-delimiters cycle  :show-arrows="false" height="815" class="hidden-sm-and-up">
       <v-carousel-item v-for="(paralaxItem, index) in paralaxItems" :key="index">
         <v-parallax
           dark
-          class="mb-4"
           :height="imgVerticalHeight"
           :src="require(`@/assets/bg/vertical/${paralaxItem.img.vertical}`)"
         >
-          <v-row align="center" justify="center" class="mb-10" >
-            <v-col lg="10" class="text-center" cols="12" style="background-color:#033!important; opacity:0.5;">
+          <v-row align="center" justify="center" >
+            <v-col  class="text-center"  style="background:#333333;opacity:0.5;">
               <v-img
                 width="100%"
                 :src="require(`@/assets/bg/text/${languege}/${paralaxItem.inscription}`)"
