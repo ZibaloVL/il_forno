@@ -4,7 +4,7 @@
       <v-card-title class="text-center justify-center py-6">
         <h2 class="font-weight-bold display-3 basil--text">{{titulName[languege]}}</h2>
       </v-card-title>
-      <v-tabs v-model="tab" background-color="transparent" color="basil" grow>
+      <v-tabs grow center-active show-arrows v-model="tab" background-color="transparent" color="basil" >
         <v-tab v-for="item in items" :key="item">{{ item }}</v-tab>
       </v-tabs>
       <v-tabs-items v-model="tab">
