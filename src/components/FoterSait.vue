@@ -23,16 +23,16 @@
           </v-row>
         </v-container>
       </v-card-title>
-      <v-row align="center" justify="space-between" class="ma-2">
-        <div>
+      <v-row align="center" justify-sm="space-between" justify-xs="center" class="ma-2">
+       <v-col  class="text-xs-center text-sm-center text-md-left">
           <v-btn v-for="icon in icons" :key="icon" class="mx-4" dark icon>
             <v-icon blak size="24px">{{ icon }}</v-icon>
           </v-btn>
-        </div>
-        <div>
+        </v-col>
+        <v-col class=" text-right hidden-sm-and-down">
           {{ new Date().getFullYear() }} —
           <strong>Il Forno</strong>
-        </div>
+        </v-col>
       </v-row>
     </v-card>
   </v-footer>
