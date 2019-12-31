@@ -24,10 +24,10 @@
         </v-container>
       </v-card-title>
       <v-row align="center" class="ma-2" no-gutters>
-        <v-col v-for="icon in icons" :key="icon" xs="4" md="1" class="text-center">
-          <v-btn class="mx-4" dark icon to="https//www.facebook.com/ilforno.md/">
-            <v-icon blak size="24px">{{ icon }}</v-icon>
-          </v-btn>
+        <v-col v-for="(social, i) in socials" :key="i" xs="4" md="1" class="text-center">
+          <a :href="social.path" class="mx-3" target="_blank" style="text-decoration: none;">
+            <v-icon blak size="24px">{{ social.icon }}</v-icon>
+          </a>
         </v-col>
         <v-col md="9" class="text-right pr-3 hidden-sm-and-down">
           {{ new Date().getFullYear() }} —
@@ -43,7 +43,20 @@ export default {
   name: "FoterSait",
 
   data: () => ({
-    icons: ["fab fa-facebook", "fab fa-instagram", "fab fa-tripadvisor"]
+    socials: [
+      {
+        icon: "fab fa-facebook",
+        path: "https://www.facebook.com/ilforno.md/?epa=SEARCH_BOX"
+      },
+      {
+        icon: "fab fa-instagram",
+        path: "https://www.facebook.com/ilforno.md/?epa=SEARCH_BOX"
+      },
+      {
+        icon: "fab fa-tripadvisor",
+        path: "https://www.facebook.com/ilforno.md/?epa=SEARCH_BOX"
+      }
+    ]
   })
 };
 </script>

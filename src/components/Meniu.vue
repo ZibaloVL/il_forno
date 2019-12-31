@@ -4,7 +4,14 @@
       <v-card-title class="text-center justify-center py-6">
         <h2 class="font-weight-bold display-3 basil--text">{{titulName[languege]}}</h2>
       </v-card-title>
-      <v-tabs grow center-active show-arrows v-model="tab" background-color="transparent" color="basil" >
+      <v-tabs
+        grow
+        center-active
+        show-arrows
+        v-model="tab"
+        background-color="transparent"
+        color="basil"
+      >
         <v-tab v-for="item in items" :key="item">{{ item }}</v-tab>
       </v-tabs>
       <v-tabs-items v-model="tab">
@@ -74,7 +81,6 @@ export default {
   },
   methods: {
     imgMenu(item) {
-      console.log("item=", item);
       let imgPaths = [];
       this.menuPages.forEach(element => {
         if (element.name[this.languege] === item) {

@@ -4,7 +4,7 @@ import router from './router'
 import store from './store'
 import './registerServiceWorker'
 import vuetify from './plugins/vuetify';
-const path = require('path');
+
 
 // раздел контактов
 // форма обратной связи
@@ -19,5 +19,3 @@ new Vue({
   vuetify,
   render: h => h(App)
 }).$mount('#app')
-console.log('sssssss')
-console.log(path.join(__dirname, '_'))
