@@ -80,12 +80,5 @@ export default {
 </script>
 
 <style  scoped>
-@font-face {
-  font-family: "BariolRegular";
-  src: url("../assets/fonts/Bario/BariolRegular.eot");
-  src: url("../assets/fonts/Bario/BariolRegular.woff") format("woff"),
-    url("../assets/fonts/Bario/BariolRegular.ttf") format("truetype");
-  font-style: normal;
-  font-weight: normal;
-}
+
 </style>

@@ -2,7 +2,7 @@
   <div>
     <v-card color="basil">
       <v-card-title class="text-center justify-center py-6">
-        <h2 class="font-weight-bold display-3 basil--text">{{titulName[languege]}}</h2>
+        <h2 class="font-weight-bold display-3 basil--text" style="font-family:'BariolRegular'!important;">{{titulName[languege]}}</h2>
       </v-card-title>
       <v-tabs
         grow

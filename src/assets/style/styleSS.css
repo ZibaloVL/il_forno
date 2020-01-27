@@ -1,0 +1,14 @@
+@font-face {
+    font-family: "BariolRegular";
+    
+    src: url("../fonts/Bario/BariolRegular.eot");
+    src: url("../fonts/Bario/BariolRegular.woff") format("woff"),
+      url("../fonts/Bario/BariolRegular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+  }
+body{
+    background-color: black !important;
+    font-family: "BariolRegular";
+    color:#ffffff;
+}
