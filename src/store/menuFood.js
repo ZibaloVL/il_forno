@@ -1,20 +1,20 @@
 import Vue from 'vue'
 
 export default {
-    state: {
-        menuFood: [
-            {
-                nameTypeFood: ["Завтрак", "Breakfast", "Mic Dejun"]
-            }
-        ]
-    },
-    getters: {
+  state: {
+    menuFood: [
+      {
+        nameTypeFood: ['Завтрак', 'Breakfast', 'Mic Dejun']
+      }
+    ]
+  },
+  getters: {
 
-    },
-    mutations: {
+  },
+  mutations: {
 
-    },
-    actions: {
+  },
+  actions: {
 
-    }
+  }
 }
